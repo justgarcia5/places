@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FiMenu } from 'react-icons/fi';
 
 import MainHeader from './MainHeader';
 import NavLinks from './NavLinks';
@@ -10,30 +11,28 @@ import './MainNavigation.css';
 const MainNavigation = props => {
   const [drawerIsOpen, setDrawerIsOpen] = useState(false);
 
-  const openDrawer = () => {
+  const openDrawerHandler = () => {
     setDrawerIsOpen(true);
   };
 
-  const closeDrawer = () => {
+  const closeDrawerHandler = () => {
     setDrawerIsOpen(false);
   }
 
   return (
     <React.Fragment>
-      {drawerIsOpen && <Backdrop onClick={closeDrawer} />}
-      <SideDrawer show={drawerIsOpen} onCloseDrawer={closeDrawer}>
+      {drawerIsOpen && <Backdrop onClick={closeDrawerHandler} />}
+      <SideDrawer show={drawerIsOpen} onCloseDrawer={closeDrawerHandler}>
         <nav className='main-navigation__drawer-nav'>
           <NavLinks />
         </nav>
       </SideDrawer>
       <MainHeader>
-        <button className="main-navigation__menu-btn" onClick={openDrawer}>
-          <span />
-          <span />
-          <span />
+        <button className="main-navigation__menu-btn" onClick={openDrawerHandler}>
+          <FiMenu />
         </button>
         <h1 className="main-navigation__title">
-          <Link to="/">YourPlaces</Link>
+          <Link to="/">Places</Link>
         </h1>
         <nav className='main-navigation__header-nav'>
           <NavLinks />

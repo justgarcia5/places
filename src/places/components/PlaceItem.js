@@ -3,17 +3,17 @@ import { Link } from 'react-router-dom';
 
 import Avatar from '../../shared/UIElements/Avatar';
 import Card from '../../shared/UIElements/Card';
-import './UserItem.css';
+import './PlaceItem.css';
 
-const UserItem = props => {
+const PlaceItem = props => {
   return (
-    <li className='user-item'>
-      <Card className='user-item__content'>
+    <li className='place-item'>
+      <Card className='place-item__content'>
         <Link to={`/${props.id}/places`}>
-          <div className='user-item__image'>
+          <div className='place-item__image'>
             <Avatar image={props.image}/>
           </div>
-          <div className='user-item__info'>
+          <div className='place-item__info'>
             <h2>{props.name}</h2>
             <h3>
               {props.placeCount} {props.placeCount === 1 ? 'Place' : 'Places'}
@@ -25,4 +25,4 @@ const UserItem = props => {
   )
 }
 
-export default UserItem;
+export default PlaceItem;
