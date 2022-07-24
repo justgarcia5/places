@@ -10,7 +10,7 @@ const SideDrawer = props => {
       in={props.show}
       timeout={200}
       classNames='slide-in-left'
-      mouseOnEnter
+      mountOnEnter
       unmountOnExit
     >
       <aside className="side-drawer" onClick={props.onCloseDrawer}>
