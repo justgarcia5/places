@@ -4,6 +4,7 @@
 
 .place-item__content {
   padding: 0;
+  background-color: white;
 }
 
 .place-item__info {

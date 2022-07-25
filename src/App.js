@@ -17,7 +17,7 @@ const App = () => {
       <main>
         <Routes>
           <Route path="/" exact='true' element={<Users />} />
-          <Route path="/u1/places" exact='true' element={<UserPlaces />} />
+          <Route path="/:userId/places" exact='true' element={<UserPlaces />} />
           <Route path="/places/new" exact='true' element={<NewPlaces />} />
           <Route path="/auth" exact='true' element={<NewPlaces />} />
         </Routes>
