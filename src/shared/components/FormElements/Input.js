@@ -23,8 +23,8 @@ const inputReducer = (state, action) => {
 
 const Input = props => {
   const [inputState, dipatchInput] = useReducer(inputReducer, {
-    value: '',
-    isValid: false,
+    value: props.value || '',
+    isValid: props.valid || false,
     isTouched: false
   });
 
@@ -68,7 +68,6 @@ const Input = props => {
       value={inputState.value}
     />
   );
-
 
   return (
     <div className={`form-control ${!inputState.isValid && inputState.isTouched && 'form-control--invalid'}`}>

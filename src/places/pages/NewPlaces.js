@@ -3,7 +3,7 @@ import React, { useCallback, useReducer } from 'react';
 import Input from '../../shared/components/FormElements/Input';
 import { VALIDATOR_MINLENGTH, VALIDATOR_REQUIRE } from '../../shared/util/validators';
 import Button from '../../shared/components/FormElements/Button';
-import './NewPlace.css';
+import './PlaceForm.css';
 
 const formReducer = (state, action) => {
   switch (action.type) {
@@ -24,6 +24,11 @@ const formReducer = (state, action) => {
         },
         isValid: formIsValid
       };
+    case 'SUBMITTED':
+      console.log(state)
+      return {
+        state,
+      }
     default:
       return state;
   }
@@ -37,6 +42,10 @@ const NewPlaces = () => {
         isValid: false
       },
       description: {
+        value: '',
+        isValid: false
+      },
+      address: {
         value: '',
         isValid: false
       }
@@ -54,7 +63,10 @@ const NewPlaces = () => {
 
   const placesSubmitHandler = event => {
     event.preventDefault();
-    console.log(formState.inputs);
+    // console.log(formState.inputs);
+    dipatchForm({
+      type: 'SUBMITTED'
+    })
   }
 
   return (
