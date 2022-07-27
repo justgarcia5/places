@@ -6,7 +6,7 @@ import PlaceList from '../components/PlaceList';
 const DUMMY_PLACES = [
   {
     id: 'p1',
-    title: 'Empire State Bilding',
+    title: 'Empire State Building',
     description: 'One of the most famous sky scrapers in the world!',
     imageUrl: 'https://image.kkday.com/v2/image/get/w_1900%2Cc_fit/s1.kkday.com/product_20490/20220217065504_ERdIf/jpg',
     address: '20 W 34th St., New York, NY 10001',
@@ -18,7 +18,7 @@ const DUMMY_PLACES = [
   },
   {
     id: 'p2',
-    title: 'Empire State Bilding',
+    title: 'Empire State Building',
     description: 'One of the most famous sky scrapers in the world!',
     imageUrl: 'https://image.kkday.com/v2/image/get/w_1900%2Cc_fit/s1.kkday.com/product_20490/20220217065504_ERdIf/jpg',
     address: '20 W 34th St., New York, NY 10001',
