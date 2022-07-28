@@ -25,6 +25,7 @@
 }
 
 .modal__footer {
+  text-align: right;
   padding: 1rem 0.5rem;
 }
 

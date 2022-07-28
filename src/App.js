@@ -10,6 +10,7 @@ import MainNavigation from './shared/components/Navigation/MainNavigation';
 import Users from './user/pages/Users';
 import UserPlaces from './places/pages/UserPlaces';
 import UpdatePlace from './places/pages/UpdatePlace';
+import Auth from './user/pages/Auth';
 
 const App = () => {
   return (
@@ -21,7 +22,7 @@ const App = () => {
           <Route path="/:userId/places" exact='true' element={<UserPlaces />} />
           <Route path="/places/new" exact='true' element={<NewPlaces />} />
           <Route path="/places/:placeId" exact='true' element={<UpdatePlace />} />
-          <Route path="/auth" exact='true' element={<NewPlaces />} />
+          <Route path="/auth" exact='true' element={<Auth />} />
         </Routes>
       </main>
     </Router>
