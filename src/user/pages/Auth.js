@@ -22,7 +22,7 @@ const Auth = () => {
         value: '',
         isValid: false
       }
-    }, 
+    },
     false
   );
 
@@ -41,7 +41,7 @@ const Auth = () => {
         {
           ...formState.inputs,
           name: undefined
-        }, 
+        },
         formState.inputs.email.isValid && formState.inputs.password.isValid);
     } else {
       setFormData(
@@ -64,7 +64,7 @@ const Auth = () => {
       <form  onSubmit={submitHandler}>
         <h2>Login Required</h2>
         <hr />
-        {!isLoginMode && 
+        {!isLoginMode &&
           <Input
             id='name'
             label='Your Name'
@@ -75,7 +75,7 @@ const Auth = () => {
             onInput={inputHandler}
           />
         }
-        <Input 
+        <Input
           id='email'
           label='E-mail'
           element='input'
@@ -84,7 +84,7 @@ const Auth = () => {
           error='Please enter a valid email'
           onInput={inputHandler}
         />
-        <Input 
+        <Input
           id='password'
           label='Password'
           element='input'

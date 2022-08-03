@@ -1,19 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-import UsersList from '../components/UserLIst'
+import UsersList from '../components/UserLIst';
+import Card from '../../shared/components/UIElements/Card';
 
 const Users = () => {
-  const USERS = [
-    {
-      id: 'u1',
-      name: 'Justin Garcia',
-      image: 'https://www.yosemite.com/wp-content/uploads/2016/04/Glacier-Point-Yosemite.jpg',
-      places: 3
-    }
-  ]
+  const [users, setUsers] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    setIsLoading(true);
+    fetch('http://localhost:5000/api/users')
+      .then(res => res.json())
+      .then(data => {
+        setUsers(data);
+        setIsLoading(false);
+      });
+  }, []);
+
   return (
     <React.Fragment>
-      <UsersList items={USERS} />
+      {users &&
+        <UsersList items={users} isLoading={isLoading} />
+      }
     </React.Fragment>
   )
 }
