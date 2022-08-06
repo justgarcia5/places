@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 import UsersList from '../components/UserLIst';
-import Card from '../../shared/components/UIElements/Card';
 
 const Users = () => {
   const [users, setUsers] = useState([]);

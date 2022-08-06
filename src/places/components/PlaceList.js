@@ -21,9 +21,10 @@ const PlaceList = props => {
       </div>
     )
   }
+
   return (
     <ul className='place-list'>
-      {props.item.map(place => (
+      {props.item.places.map(place => (
         <PlaceItem
           key={place.id}
           id={place.id}

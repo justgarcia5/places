@@ -89,6 +89,7 @@ const Auth = () => {
           label='Password'
           element='input'
           type={showPassord ? 'text' : 'password'}
+          autoComplete='current-password'
           validators={[VALIDATOR_MINLENGTH(5)]}
           error='Please enter a valid password'
           onInput={inputHandler}
