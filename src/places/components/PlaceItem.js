@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { Navigate } from 'react-router-dom';
 
 import Card from '../../shared/components/UIElements/Card';
 import Button from '../../shared/components/FormElements/Button';
@@ -11,6 +12,7 @@ const PlaceItem = props => {
   const [showMap, setShowMap] = useState(false);
   const [showConfirmModal, setShowConfimModal] = useState(false);
   const auth = useContext(AuthContext);
+  const [isDeleted, setIsDeleted] = useState(false);
 
   const showMapHandler = () => setShowMap(true);
 
@@ -25,12 +27,18 @@ const PlaceItem = props => {
   };
 
   const confirmDeletePlacesHandler = () => {
-    console.log('Deleting')
-    setShowConfimModal(false);
+    fetch(`http://localhost:5000/api/places/${props.id}`, {
+      method: 'DELETE'
+    })
+    .then(() => {
+      setShowConfimModal(false);
+      setIsDeleted(true);
+    })
   };
 
   return (
     <React.Fragment>
+      {isDeleted && <Navigate to='/' />}
       <Modal
         show={showMap}
         onCancel={closeMapHandler}
